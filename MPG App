@@ -1,0 +1,43 @@
+package ch04_Exercises;
+
+import java.util.Scanner;
+
+public class gasMilage {
+
+	public static void main(String[] args) 
+	{
+		int miles = 0,
+			gas;
+		float total = 0,
+			  mpg;
+		Scanner scn = new Scanner(System.in);
+		
+		System.out.println("Miles per Galon Calculator");
+		System.out.print("\nEnter miles driven: ");
+		miles = scn.nextInt();
+		System.out.print("\nEnter gas used: ");
+		gas = scn.nextInt();
+		
+		while(miles != -1)
+		{
+			mpg = (float)miles / gas;
+			
+			total += mpg;
+			
+			System.out.printf("\nMPGs for the trip: %.2f\n", mpg);
+			System.out.printf("Total MPGs: %.2f\n", total);
+			System.out.print("\nEnter miles driven (-1 to quit): ");
+			miles = scn.nextInt();
+			if(miles != -1)
+			{
+				System.out.print("Enter gas used: ");
+				gas = scn.nextInt();
+			}
+			else 
+			{
+				System.out.println("\nGood Bye!");
+			}
+		}
+	}
+
+}
